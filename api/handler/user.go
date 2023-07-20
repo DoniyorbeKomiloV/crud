@@ -34,7 +34,7 @@ func (h *Handler) CreateUser(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte("Error while create user"))
 		return
 	}
-	user, err := h.strg.User().GetByIdUser(&models.UserPrimaryKey{
+	user, err := h.strg.User().GetById(&models.UserPrimaryKey{
 		Id: userId.Id,
 	})
 	if err != nil {
